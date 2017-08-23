@@ -1,0 +1,55 @@
+1.	Their MAC addresses are 8c:a9:82:50:f0:a6, 04:0c:ce:d8:0f:fa and 00:26:08:e5:66:07 and their IP addresses are 10.0.2.3, 10.0.2.2, and 10.0.2.1.
+2.	The type of network device appears to be a router, making this a local network (i.e. my apartment/home). This can be seen from how there are connections to many different sites like pnc, youtube, etc. It is connecting LANs and WANs or local area networks to wide area networks. 
+3.	 
+a.	The DNS hostname of the server it connects to is dl.xs4all.nl.
+b.	The connection is using Active FTP.
+c.	One major vulnerability of the FTP protocol is the fact that it used plaintext passwords.
+d.	Network protocols that can be used in place of FTP are MFT (Managed file transfer), TFTP (Trivial File Transfer Protocol), and SFTP (Simple File Transfer Protocol). 
+4.	 
+a.	The domain name of this site is pnc.
+b.	No, the server needs to send this information to establish an encryption algorithm with the client. 
+c.	Cipher Suites (36 suites)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
+Cipher Suite: TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA (0x0087)
+Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
+Cipher Suite: TLS_ECDH_RSA_WITH_AES_256_CBC_SHA (0xc00f)
+Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA (0xc005)
+Cipher Suite: TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0084)
+Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
+Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0045)
+Cipher Suite: TLS_DHE_DSS_WITH_CAMELLIA_128_CBC_SHA (0x0044)
+Cipher Suite: TLS_DHE_DSS_WITH_RC4_128_SHA (0x0066)
+Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
+Cipher Suite: TLS_ECDH_RSA_WITH_RC4_128_SHA (0xc00c)
+Cipher Suite: TLS_ECDH_RSA_WITH_AES_128_CBC_SHA (0xc00e)
+Cipher Suite: TLS_ECDH_ECDSA_WITH_RC4_128_SHA (0xc002)
+Cipher Suite: TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA (0xc004)
+Cipher Suite: TLS_RSA_WITH_SEED_CBC_SHA (0x0096)
+Cipher Suite: TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0041)
+Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
+Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004)
+Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc008)
+Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
+Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
+Cipher Suite: TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (0x0013)
+Cipher Suite: TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA (0xc00d)
+Cipher Suite: TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA (0xc003)
+Cipher Suite: SSL_RSA_FIPS_WITH_3DES_EDE_CBC_SHA (0xfeff)
+Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)   
+ 
+d.	 MD5 is worrisome from a security standpoint since it is vulnerable to many attacks including collision attacks. 
+e.	The Cipher Suite TLS_RSA_WITH_RC4_128_MD5 (0x0004) is chosen by the server for the connection.
+5.	 
+a.	The channel used to authenticate the user is not private and the information is not encrypted, since we can see it with Wireshark. This is insecure because anyone can be listening to the exchange and steal the user’s cookie. 
+b.	This would let an attacker steal the cookie of a user and impersonate them since the cookie is not encrypted. 
+c.	Users can protect themselves from this kind of attack by using https. This is more secure than the http they are using because it will provide security for any connection. 
+d.	The user logged into Facebook and liked some stuff, looked on their newsfeed for things that have been recommended to them. They searched things, they composed messages, sent someone an attachment, they checked notifications, liked things, sent more messages.

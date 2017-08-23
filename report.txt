@@ -1,0 +1,27 @@
+Overview
+
+The objective of this pen test was to test the superdupersketchycorp server for possible attacks that could result in attackers stealing user and server information from the server. With these findings we hope to provide information on where the server is vulnerable in order to strengthen the security provided on the server. 
+
+Methodology
+
+Initially, we obtained the password to the local Wifi network by utilizing aircrack-ng and a simple python program for generating possible passwords. After we gained access to the network we used nmap and the local IP address to find the correct IP address for the server. Using this IP address and the password obtained through the email spoofing we could ssh into the server. Once we were connected to the server we obtained the hostname and port for the server from the Welcome.txt file. After using ssh to login to the server we used tcpdump to capture network traffic and put it into a pcap file. Using wireshark, we analyzed the pcap file to find the username and password. After going to superdupersketchycorp.com we used these credentials to login as that user. 
+
+Findings
+
+•	We found the password for the Wifi network using a python program to generate all possible passwords and aircrack to find the correct password (EECS388-1z4). 
+•	We used telnet to spoof an email to get login credentials for server.
+•	Using nmap, we located the local IP address to use for server login (192.168.0.23) by seeing which tcp connection was open (not filtered or closed). Our local IP address (192.168.0.67) was used as a starting point for the range of IP addresses we analyzed. 
+•	We found Welcome.txt once logged into server and got the hostname and port to ssh into the server without using the local Wifi. The hostname was superdupersketcycorp.com and the port was 47923.
+•	Using tcpdump, we captured network traffic and put it into pcap file so that we could later use it to find the credentials of a user on superdupersketchycorp.com. 
+•	We analyzed the pcap file in Wireshark to get username and password (mattley, 388roxmysocks) for a user to login to superdupersketchycorp.com. This gained us access to an admin page with announcements about Layoffs, Remote Office Work, and the new password to the executive lounge (h4ppie8rthDay). 
+
+Remediation
+
+We recommend that SDSC not use a flyer that advertises part of their wifi password and its format. This will make it more difficult for an attacker to use a program like aircrack to crack the password. When a user requests a new password, we would suggest that SDSC have some form of validation of the user’s authenticity (like a personal question) to validate that they are that user. When someone uses nmap to find the IP address for the server we recommend using a netfliter application like IP Personality that can change the answer of the packets based on the source IP address. Intrusion prevention systems can also be used to detect nmap scans and block traffic that is malicious. 
+We suggest that SDSC reauthenticate the user before giving them access to the Welcome.txt file. This will make sure an attacker does not gain access to the secret hostname and port since they are contained in this file. In general, when accessing sensitive information like this we suggest using reauthentication. Lastly, it would be best if SDSC encrypted the network traffic. This is important for sensitive information like usernames and passwords because it would make it more difficult for an attacker to get access to the user’s credentials.
+
+Sources:
+https://nmap.org/book/man-bypass-firewalls-ids.html
+http://ippersonality.sourceforge.net/doc/ippersonality-en-3.html
+
+
