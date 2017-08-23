@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#Source: https://github.com/jrguo/SYN-Scan-Detection/blob/master/analyze.py
+
 
 import dpkt
 import sys
@@ -61,3 +61,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Source: https://github.com/jrguo/SYN-Scan-Detection/blob/master/analyze.py
